@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBA3B9AE-72D2-4444-A7C2-48AF9B1FE4D3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>USALauncher</RootNamespace>
+    <AssemblyName>USALauncher</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>USALifeKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\LOGO01_snowwhite-PNG.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ByteSize, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ByteSize.1.3.0\lib\net45\ByteSize.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArmA3ServerInfo.cs" />
+    <Compile Include="Fehlermeldungen.cs" />
+    <Compile Include="Download.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Download.Designer.cs">
+      <DependentUpon>Download.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISynchronizeInvokeExtensions.cs" />
+    <Compile Include="PathSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PathSelection.Designer.cs">
+      <DependentUpon>PathSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PictureBoxOpacity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="UserProfile.cs" />
+    <EmbeddedResource Include="Download.resx">
+      <DependentUpon>Download.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PathSelection.resx">
+      <DependentUpon>PathSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="USALifeKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\texture-bw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teamspeak_button.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regeln_button.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homepage_button.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forum_button.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO01_darkgrey-PNG250px.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\steam.png" />
+    <None Include="Resources\updatebutton.png" />
+    <None Include="Resources\playingtext.png" />
+    <None Include="Resources\stopbuttonsmall.png" />
+    <None Include="Resources\playbuttonsmall.png" />
+    <None Include="Resources\overlayradio.png" />
+    <None Include="Resources\playbuttonfull.png" />
+    <None Include="Resources\regelbutton.png" />
+    <None Include="Resources\tsbutton.png" />
+    <None Include="Resources\newsbutton.png" />
+    <None Include="Resources\playingsuper.png" />
+    <None Include="Resources\playingicon.png" />
+    <None Include="Resources\playradiogrey.png" />
+    <None Include="Resources\playradio.png" />
+    <None Include="Resources\stopradiogrey.png" />
+    <None Include="Resources\stopradio-Wiederhergestelltneu2.png" />
+    <None Include="Resources\playradioneu2.png" />
+    <None Include="Resources\rahmen.png" />
+    <None Include="Resources\wmpbackgr2.png" />
+    <None Include="Resources\stopradio.png" />
+    <None Include="Resources\Unbenannt-111222.png" />
+    <None Include="Resources\obere_leiste_2.png" />
+    <None Include="Resources\spielenbutton.jpg" />
+    <None Include="Resources\Strich.png" />
+    <None Include="Resources\teamspeakbutton.jpg" />
+    <None Include="Resources\regelnbutton.jpg" />
+    <None Include="Resources\forumbutton.jpg" />
+    <None Include="Resources\homepagebutton.jpg" />
+    <None Include="Resources\Fenster_X.png" />
+    <None Include="Resources\Line_NEW_LOGO.png" />
+    <None Include="Resources\Line.png" />
+    <None Include="Resources\384591.png" />
+    <None Include="Resources\730a8de14e2d462e3abaad6d99116c87-play-button-circle-icon-by-vexels.png" />
+    <None Include="Resources\dddddd.png" />
+    <None Include="Resources\homepagebutton.png" />
+    <None Include="Resources\forumbutton.png" />
+    <None Include="Resources\einstellungsbutton.png" />
+    <None Include="Resources\jetztspielenbuttonneu.png" />
+    <None Include="Resources\downloadbutton.png" />
+    <None Include="Resources\HinterGrund1.jpg" />
+    <None Include="Resources\HinterGrund2.jpg" />
+    <None Include="Resources\HinterGrund3.jpg" />
+    <None Include="Resources\HinterGrund1v2.png" />
+    <None Include="Resources\HinterGrund1v3.png" />
+    <None Include="Resources\HinterGrund2v1.png" />
+    <None Include="Resources\HinterGrundSW1.jpg" />
+    <None Include="Resources\HinterGrundSW2.jpg" />
+    <None Include="Resources\HinterGrundSW3.jpg" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\20180227160713_1.jpg" />
+    <None Include="Resources\background_14_5.png" />
+    <None Include="Resources\header_logo2.png" />
+    <None Include="Resources\header_logo Kopie2.png" />
+    <None Include="Resources\facebook-2048-black.png" />
+    <None Include="Resources\facebook-2048-black Kopie.png" />
+    <None Include="Resources\facebook_icon.png" />
+    <None Include="Resources\33578.png" />
+    <None Include="Resources\backgroundmain.jpg" />
+    <Content Include="Resources\Logo01_darkgrey.png" />
+    <None Include="Resources\Mexican_American_Flag.PNG" />
+    <None Include="Resources\LOGO01_snowwhite-PNG.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
